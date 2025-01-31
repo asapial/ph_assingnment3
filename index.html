@@ -4,17 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 3</title>
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                 gn: '#179800',
-              }
-            }
-          }
-        }
-    </script>
+<!-- Tailwind Custom Configuration -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,6 +14,26 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&family=Sora:wght@100..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              keyframes: {
+                rotateLoop: {
+                  '0%': { transform: 'rotate(0deg)', transformOrigin: 'center' },
+                  '25%': { transform: 'rotate(2deg)', transformOrigin: 'center' },
+                  '50%': { transform: 'rotate(-2deg)', transformOrigin: 'center' },
+                  '75%': { transform: 'rotate(2deg)', transformOrigin: 'center' },
+                  '100%': { transform: 'rotate(0deg)', transformOrigin: 'center' }
+                }
+              },
+              animation: {
+                'rotate-loop': 'rotateLoop 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite'
+              }
+            }
+          }
+        };
+    </script>
 
 </head>
 <body  style="font-family: 'Merriweather', serif;">
@@ -65,10 +76,10 @@
         <section class="bannerContainer flex justify-center my-10">
             <div class="bannerr w-full px-2 lg:w-4/5 flex items-center flex-col">
                 <div class="bannerText w-full lg:w-3/4 items-center flex flex-col">
-                    <h1 class="text-center text-4xl lg:text-6xl">
+                    <h1 class="text-center text-4xl lg:text-6xl animate-rotate-loop">
                         Freshness <span class="text-[#179800]">You Can<br>Count</span> On, Prices You’ll Love!
                     </h1>
-                    <h6 class="text-base lg:text-xl w-3/4 text-center my-4">
+                    <h6 class="text-base lg:text-xl w-3/4 text-center my-4 animate-rotate-loop">
                         Shop your daily essentials at unbeatable prices. From fresh produce to pantry staples, we’ve got you covered every day!
                     </h6>
                 </div>
@@ -86,8 +97,8 @@
             </h1>
             <div class="cardContainer flex flex-col lg:flex-row w-full gap-4 justify-between ">
                 <div class="card flex bg-[#EFEBE3] rounded-xl p-5 justify-center items-center flex-col gap-3">
-                    <div class="bg-white rounded-full flex justify-center items-center p-6">
-                        <img src="c2-assets/service.png" alt="" srcset="">
+                    <div class="bg-white rounded-full flex justify-center items-center p-6 ">
+                        <img src="c2-assets/service.png" alt="" srcset="" >
                     </div>
                     <h1 class="font-bold text-2xl">
                         24/7 Services 
@@ -148,7 +159,7 @@
                 <div class="gridCardContainer w-full lg:w-[65%] grid grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 gap-3">
                     <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
                         <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
+                            <img src="c2-assets/potato.png" alt="" srcset="">
                         </div>
                         <div class="w-3/5">
                             <div class="flex gap-1 inline">
@@ -160,8 +171,8 @@
                                 </svg>
                                 <h1>4.5</h1>
                             </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
-                            <h2 class="text-base font-bold">$39.99</h2>
+                            <h1 class="text-xl font-bold">Potato 500g</h1>
+                            <h2 class="text-base font-bold">$19.99</h2>
                         </div>
                     </div>
                     <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
@@ -181,9 +192,10 @@
                             <h1 class="text-xl font-bold">Onion 1 KG</h1>
                             <h2 class="text-base font-bold">$39.99</h2>
                         </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                    </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
                         <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
+                            <img src="c2-assets/tomato.png" alt="" srcset="">
                         </div>
                         <div class="w-3/5">
                             <div class="flex gap-1 inline">
@@ -195,12 +207,13 @@
                                 </svg>
                                 <h1>4.5</h1>
                             </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
+                            <h1 class="text-xl font-bold">Tomato 500g</h1>
                             <h2 class="text-base font-bold">$39.99</h2>
                         </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                    </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
                         <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
+                            <img src="c2-assets/potato.png" alt="" srcset="">
                         </div>
                         <div class="w-3/5">
                             <div class="flex gap-1 inline">
@@ -212,78 +225,11 @@
                                 </svg>
                                 <h1>4.5</h1>
                             </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
-                            <h2 class="text-base font-bold">$39.99</h2>
+                            <h1 class="text-xl font-bold">Potato 500g</h1>
+                            <h2 class="text-base font-bold">$19.99</h2>
                         </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
-                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
-                        </div>
-                        <div class="w-3/5">
-                            <div class="flex gap-1 inline">
-                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                                    <g transform="translate(0 -1028.4)">
-                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
-                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
-                                    </g>
-                                </svg>
-                                <h1>4.5</h1>
-                            </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
-                            <h2 class="text-base font-bold">$39.99</h2>
-                        </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
-                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
-                        </div>
-                        <div class="w-3/5">
-                            <div class="flex gap-1 inline">
-                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                                    <g transform="translate(0 -1028.4)">
-                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
-                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
-                                    </g>
-                                </svg>
-                                <h1>4.5</h1>
-                            </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
-                            <h2 class="text-base font-bold">$39.99</h2>
-                        </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
-                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
-                        </div>
-                        <div class="w-3/5">
-                            <div class="flex gap-1 inline">
-                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                                    <g transform="translate(0 -1028.4)">
-                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
-                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
-                                    </g>
-                                </svg>
-                                <h1>4.5</h1>
-                            </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
-                            <h2 class="text-base font-bold">$39.99</h2>
-                        </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
-                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
-                            <img src="c2-assets/onion.png" alt="" srcset="">
-                        </div>
-                        <div class="w-3/5">
-                            <div class="flex gap-1 inline">
-                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
-                                    <g transform="translate(0 -1028.4)">
-                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
-                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
-                                    </g>
-                                </svg>
-                                <h1>4.5</h1>
-                            </div>
-                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
-                            <h2 class="text-base font-bold">$39.99</h2>
-                        </div>
-                    </div>                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                    </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
                         <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
                             <img src="c2-assets/onion.png" alt="" srcset="">
                         </div>
@@ -301,6 +247,81 @@
                             <h2 class="text-base font-bold">$39.99</h2>
                         </div>
                     </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
+                            <img src="c2-assets/tomato.png" alt="" srcset="">
+                        </div>
+                        <div class="w-3/5">
+                            <div class="flex gap-1 inline">
+                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                                    <g transform="translate(0 -1028.4)">
+                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
+                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
+                                    </g>
+                                </svg>
+                                <h1>4.5</h1>
+                            </div>
+                            <h1 class="text-xl font-bold">Tomato 500g</h1>
+                            <h2 class="text-base font-bold">$39.99</h2>
+                        </div>
+                    </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
+                            <img src="c2-assets/potato.png" alt="" srcset="">
+                        </div>
+                        <div class="w-3/5">
+                            <div class="flex gap-1 inline">
+                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                                    <g transform="translate(0 -1028.4)">
+                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
+                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
+                                    </g>
+                                </svg>
+                                <h1>4.5</h1>
+                            </div>
+                            <h1 class="text-xl font-bold">Potato 500g</h1>
+                            <h2 class="text-base font-bold">$19.99</h2>
+                        </div>
+                    </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
+                            <img src="c2-assets/onion.png" alt="" srcset="">
+                        </div>
+                        <div class="w-3/5">
+                            <div class="flex gap-1 inline">
+                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                                    <g transform="translate(0 -1028.4)">
+                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
+                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
+                                    </g>
+                                </svg>
+                                <h1>4.5</h1>
+                            </div>
+                            <h1 class="text-xl font-bold">Onion 1 KG</h1>
+                            <h2 class="text-base font-bold">$39.99</h2>
+                        </div>
+                    </div>
+                    <div class="gridCard bg-white  p-2 flex gap-2 rounded-2xl">
+                        <div class="w-2/5 rounded-xl bg-[#EFEBE3] flex justify-center items-center">
+                            <img src="c2-assets/tomato.png" alt="" srcset="">
+                        </div>
+                        <div class="w-3/5">
+                            <div class="flex gap-1 inline">
+                                <svg width="18px" height="18px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+                                    <g transform="translate(0 -1028.4)">
+                                     <path d="m12 1028.4 4 9 8 1-6 5 2 9-8-5-8 5 2-9-6-5 8-1z" fill="#f39c12"/>
+                                     <path d="m12 1028.4-4 9-6.9688 0.8 4.9688 4.2-0.1875 0.8 0.1875 0.2-1.75 7.8 7.75-4.8 7.75 4.8-1.75-7.8 0.188-0.2-0.188-0.8 4.969-4.2-6.969-0.8-4-9z" fill="#f1c40f"/>
+                                    </g>
+                                </svg>
+                                <h1>4.5</h1>
+                            </div>
+                            <h1 class="text-xl font-bold">Tomato 500g</h1>
+                            <h2 class="text-base font-bold">$39.99</h2>
+                        </div>
+                    </div>
+                    
+
+                   
                 </div>
             </div>
         </div>
@@ -347,25 +368,27 @@
     </section>
     
     <section class="footerContainer relative bg-[#179800] flex flex-col items-center  justify-center mt-[250px] py-[100px]">
-        <div class="footerCard absolute p-5 lg:w-4/5 bg-[#EFEBE3] rounded-3xl flex top-[-200px]">
+        <div class="footerCard absolute mx-3 p-5 lg:w-4/5 bg-[#EFEBE3] rounded-3xl flex top-[-200px] justify-around">
             <div class="w-[40%]">
                 <img src="c2-assets/vegetable-busket.png" alt="" srcset="">
             </div>
-            <div class="w-60% flex flex-col gap-5 justify-center">
-                <h1 class="text-3xl font-bold">
-                    Get Grocery News!
-                </h1>
-                <h2 class="text-base font-bold">
-                    Exclusive training tips, ticks, product deals and more.
-                </h2>
-                <input type="email" name="" id="" placeholder="Enter email..." class="rounded-xl p-2">
-                <button class="bg-[#179800] text-white p-3 text-xl rounded-2xl">
-                    Subscribe
-                </button>
+            <div class="w-60% flex flex-col gap-5 justify-center items-center">
+                <div class="flex flex-col gap-5">
+                    <h1 class="text-3xl font-bold">
+                        Get Grocery News!
+                    </h1>
+                    <h2 class="text-xl">
+                        Exclusive training tips, ticks, product deals and more.
+                    </h2>
+                    <input type="email" name="" id="" placeholder="Enter email..." class="rounded-xl p-2">
+                    <button class="bg-[#179800] text-white p-3 text-xl rounded-2xl w-[170px]">
+                        Subscribe
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="footer flex flex-col lg:flex-row w-full lg:w-4/5 justify-between items-center mt-[100px]">
-            <div class="w-1/3">
+        <div class="footer flex flex-col lg:flex-row w-full lg:w-4/5 justify-between items-center mt-[100px] gap-5">
+            <div class="w-full p-3 lg:w-1/3">
                 <div>
                     <img src="c2-assets/logo-footer.png" alt="" srcset="">
                 </div>
@@ -373,14 +396,14 @@
                     Discover a world of treats, toys, and essentials handpicked for your furry friends
                 </h1>
             </div>
-            <div class="w-1/3 list-none flex   text-white font-bold text-xl justify-center">
+            <div class="w-full p-3 lg:w-1/3 list-none flex   text-white font-bold text-xl lg:justify-center">
                 <div class="flex flex-col gap-4">
                     <li>Product</li>
                     <li>Services</li>
                     <li>Contact US</li>
                 </div>
             </div>
-            <div class="w-1/3 flex justify-end">
+            <div class="w-full p-3 lg:w-1/3 flex lg:justify-end">
                 <div class="flex gap-4 flex-col">
                     <h1 class="text-white text-2xl">Follow Us</h1>
                     <div class="flex flex-row gap-5">
